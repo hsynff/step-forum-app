@@ -11,18 +11,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet(name = "NavigationServlet", urlPatterns = "/ns")
-public class NavigationServlet extends HttpServlet {
+@WebServlet(name = "TopicServlet" , urlPatterns = "/ts")
+public class TopicServlet extends HttpServlet {
     private TopicService topicService=new TopicServiceImpl(new TopicDaoImpl());
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(response, request);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(response, request);
-    }
 
+    }
     private void processRequest(HttpServletResponse response, HttpServletRequest request) throws IOException, ServletException {
         String action = null;
         String address = null;
@@ -36,18 +36,12 @@ public class NavigationServlet extends HttpServlet {
         }
 
 
-        if (action.equals("topic")){
-            String idT=request.getParameter("id");
-            int idTopic=Integer.parseInt(idT);
-           Topic topic= topicService.getTopicById(idTopic);
-           request.setAttribute("topic",topic);
+        if (action.equals("getPopularTopics")) {
+            List<Topic> listTopics=topicService.getPopularTopics();
 
-            address = "/WEB-INF/view/topic.jsp";
 
-        }else if (action.equals("new-topic")){
-            address = "/WEB-INF/view/new-topic.jsp";
-        }else if (action.equals("new-account")){
-            address = "/WEB-INF/view/new-account.jsp";
+
+
         }
 
 
@@ -58,3 +52,5 @@ public class NavigationServlet extends HttpServlet {
 
     }
 }
+
+

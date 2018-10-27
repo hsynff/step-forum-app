@@ -1,5 +1,6 @@
 package com.step.forum.model;
 
+import com.step.forum.util.TopicUtil;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -16,6 +17,7 @@ public class Topic {
     private int viewCount;
     private User user;
     private List<Comment> commentList;
+    private int commentCount;
 
     public Topic(){
         commentList = new ArrayList<>();
@@ -23,5 +25,9 @@ public class Topic {
 
     public void addComment(Comment comment){
         commentList.add(comment);
+    }
+
+    public String getTopicAge(){
+        return TopicUtil.ageOf(shareDate);
     }
 }

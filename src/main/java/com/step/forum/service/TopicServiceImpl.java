@@ -14,8 +14,19 @@ public class TopicServiceImpl implements TopicService {
         this.topicDao = topicDao;
     }
 
+
     @Override
     public List<Topic> getAllTopic() {
         return topicDao.getAllTopic();
+    }
+
+    @Override
+    public Topic getTopicById(int id) {
+        return topicDao.getTopicById(id);
+    }
+
+    @Override
+    public List<Topic> getPopularTopics() {
+        return topicDao.getPopularTopics();
     }
 }
