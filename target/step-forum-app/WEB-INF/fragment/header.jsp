@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Joshgun
@@ -11,8 +12,10 @@
     <div class="headernav">
         <div class="container">
             <div class="row">
-                <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo "><a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/logo.jpg"
-                                                                                                alt=""/></a></div>
+                <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo "><a
+                        href="${pageContext.request.contextPath}/"><img
+                        src="${pageContext.request.contextPath}/resources/images/logo.jpg"
+                        alt=""/></a></div>
                 <div class="col-lg-3 col-xs-9 col-sm-5 col-md-3 selecttopic">
 
                 </div>
@@ -28,25 +31,43 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
-                    <div class="stnt pull-left">
-                        <form action="/ns?action=new-topic" method="post" class="form">
-                            <button class="btn btn-primary">Start New Topic</button>
-                        </form>
-                    </div>
 
-                    <div class="avatar pull-left dropdown">
-                        <a data-toggle="dropdown" href="#"><img src="${pageContext.request.contextPath}/resources/images/avatar.jpg" alt=""/></a> <b
-                            class="caret"></b>
-                        <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><a role="menuitem" tabindex="-3" href="#">Log Out</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-4" href="04_new_account.html">Create
-                                account</a></li>
-                        </ul>
-                    </div>
+                <c:choose>
+                    <c:when test="${sessionScope.user ne null}">
+                    <div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
+                        <div class="stnt pull-left">
+                            <a class="btn btn-primary" href="${pageContext.request.contextPath}/ns?action=new-topic">New Topic</a>
+                        </div>
 
-                    <div class="clearfix"></div>
-                </div>
+                        <div class="avatar pull-left dropdown">
+                            <a data-toggle="dropdown" href="#"><img
+                                    src="${pageContext.request.contextPath}/resources/images/avatar.jpg" alt=""/></a> <b
+                                class="caret"></b>
+                            <ul class="dropdown-menu" role="menu">
+                                <li role="presentation"><a role="menuitem" tabindex="-3" href="/us?action=logout">Log Out</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-4"
+                                                           href="${pageContext.request.contextPath}/ns?action=new-account">Create
+                                    account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
+                            <div class="stnt pull-left">
+                                <a class="btn btn-primary" href="${pageContext.request.contextPath}/ns?action=login">Login</a>
+                            </div>
+
+                            <div class="avatar pull-left dropdown">
+                                <a class="btn btn-primary" href="${pageContext.request.contextPath}/ns?action=new-account">Register</a>
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
             </div>
         </div>
     </div>

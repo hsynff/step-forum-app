@@ -4,7 +4,7 @@ import com.step.forum.model.Topic;
 
 import java.util.List;
 
-public interface TopicDAO {
+public interface TopicDao {
     List<Topic> getAllTopic();
     Topic getTopicById(int id);
     List<Topic> getPopularTopics();
