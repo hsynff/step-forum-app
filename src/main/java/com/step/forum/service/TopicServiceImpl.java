@@ -28,4 +28,19 @@ public class TopicServiceImpl implements TopicService {
     public List<Topic> getPopularTopics() {
         return topicDao.getPopularTopics();
     }
+
+    @Override
+    public boolean addTopic(Topic topic) {
+        return topicDao.addTopic(topic);
+    }
+
+    @Override
+    public boolean updateTopicViewCount(int topicId) {
+        return topicDao.updateTopicViewCount(topicId);
+    }
+
+    @Override
+    public List<Topic> getSimilarTopics(String[] keywords) {
+        return topicDao.getSimilarTopics(keywords);
+    }
 }

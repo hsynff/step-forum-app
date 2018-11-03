@@ -7,7 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Forum :: Home Page</title>
 
+
     <c:import url="${pageContext.request.contextPath}/WEB-INF/fragment/imports.jsp"/>
+    <script>
+        $(function () {
+            <c:if test="${message ne null}">
+            alert('${message}');
+
+            </c:if>
+
+        })
+
+
+    </script>
+
 
 </head>
 <body>
@@ -15,6 +28,7 @@
 <div class="container-fluid">
 
     <c:import url="${pageContext.request.request.contextPath}/WEB-INF/fragment/header.jsp"/>
+
 
     <section class="content">
 

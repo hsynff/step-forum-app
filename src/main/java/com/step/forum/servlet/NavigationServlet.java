@@ -14,7 +14,8 @@ import java.io.IOException;
 
 @WebServlet(name = "NavigationServlet", urlPatterns = "/ns")
 public class NavigationServlet extends HttpServlet {
-    private TopicService topicService=new TopicServiceImpl(new TopicDaoImpl());
+    private TopicService topicService = new TopicServiceImpl(new TopicDaoImpl());
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(response, request);
     }
@@ -28,32 +29,33 @@ public class NavigationServlet extends HttpServlet {
         String address = null;
 
 
-        if (request.getParameter("action") != null){
+        if (request.getParameter("action") != null) {
             action = request.getParameter("action");
-        }else{
+        } else {
             response.sendRedirect("/");
             return;
         }
 
 
-        if (action.equals("topic")){
-            String idT=request.getParameter("id");
-            int idTopic=Integer.parseInt(idT);
-           Topic topic= topicService.getTopicById(idTopic);
-           request.setAttribute("topic",topic);
+        if (action.equals("topic")) {
+            String idT = request.getParameter("id");
+            int idTopic = Integer.parseInt(idT);
+            Topic topic = topicService.getTopicById(idTopic);
+            request.setAttribute("topic", topic);
+            topicService.updateTopicViewCount(idTopic);
 
             address = "/WEB-INF/view/topic.jsp";
 
-        }else if (action.equals("new-topic")){
+        } else if (action.equals("new-topic")) {
             address = "/WEB-INF/view/new-topic.jsp";
-        }else if (action.equals("new-account")){
+        } else if (action.equals("new-account")) {
             address = "/WEB-INF/view/new-account.jsp";
-        }else if (action.equals("login")){
+        } else if (action.equals("login")) {
             address = "/WEB-INF/view/login.jsp";
         }
 
 
-        if (address != null){
+        if (address != null) {
             request.getRequestDispatcher(address).forward(request, response);
         }
 

@@ -8,4 +8,7 @@ public interface TopicDao {
     List<Topic> getAllTopic();
     Topic getTopicById(int id);
     List<Topic> getPopularTopics();
+    boolean addTopic(Topic topic);
+    boolean updateTopicViewCount(int topicId);
+    List<Topic> getSimilarTopics(String[] keywords);
 }

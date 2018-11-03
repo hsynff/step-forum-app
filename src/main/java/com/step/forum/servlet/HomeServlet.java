@@ -27,6 +27,11 @@ public class HomeServlet extends HttpServlet {
         List<Topic> list = topicService.getAllTopic();
 
         request.setAttribute("topicList", list);
+        if (request.getSession().getAttribute("message")!=null) {
+            request.setAttribute("message", request.getSession().getAttribute("message"));
+            request.getSession().removeAttribute("message");
+
+        }
 
         request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request,response);
 

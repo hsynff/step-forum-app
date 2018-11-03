@@ -29,10 +29,10 @@ public class UserDaoImpl implements UserDao {
             rs = ps.executeQuery();
             if (rs.next()){
                 if (!password.equals(rs.getString("password"))){
-                    throw new UserCredentialsException(MessageConstants.INVALID_PASSWORD);
+                    throw new UserCredentialsException(MessageConstants.ERROR_INVALID_PASSWORD);
                 }
                 if (rs.getInt("status") != UserConstants.USER_STATUS_ACTIVE){
-                    throw new UserCredentialsException(MessageConstants.INACTIVE_ACCOUNT);
+                    throw new UserCredentialsException(MessageConstants.ERROR_INACTIVE_ACCOUNT);
                 }
                 user = new User();
                 user.setId(rs.getInt("id_user"));
@@ -45,11 +45,11 @@ public class UserDaoImpl implements UserDao {
                 user.setRole(role);
 
             }else {
-                throw new UserCredentialsException(MessageConstants.INVALID_EMAIL);
+                throw new UserCredentialsException(MessageConstants.ERROR_INVALID_EMAIL);
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new UserCredentialsException(MessageConstants.INTERNAL_ERROR);
+            throw new UserCredentialsException(MessageConstants.ERROR_INTERNAL);
         } finally {
             DbUtil.closeAll(con, ps, rs);
         }
