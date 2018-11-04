@@ -4,6 +4,7 @@ import com.mysql.cj.xdevapi.JsonArray;
 import com.step.forum.constants.MessageConstants;
 import com.step.forum.dao.TopicDaoImpl;
 import com.step.forum.job.PopularTopicsUpdater;
+import com.step.forum.model.Comment;
 import com.step.forum.model.Topic;
 import com.step.forum.model.User;
 import com.step.forum.service.TopicService;
@@ -87,6 +88,34 @@ public class TopicServlet extends HttpServlet {
             List<Topic> topicList = topicService.getSimilarTopics(keywords);
             request.setAttribute("topicList", topicList);
             address = "/WEB-INF/fragment/similar-topics-fragments.jsp";
+        }else if (action.equals("getCommentsByTopicId")){
+            int id=Integer.parseInt(request.getParameter("id"));
+            List<Comment> listComments=topicService.getCommentsByTopicId(id);
+            request.setAttribute("listComments",listComments);
+            address="/WEB-INF/fragment/comments.jsp";
+
+        }else if (action.equals("addComment")){
+            String idTopic=request.getParameter("idTopic");
+            String desc=request.getParameter("desc");
+            Topic topic=new Topic();
+            topic.setId(Integer.parseInt(idTopic));
+            User user=(User)request.getSession().getAttribute("user");
+            Comment comment=new Comment();
+            comment.setDesc(desc);
+            comment.setTopic(topic);
+            comment.setUser(user);
+            comment.setWriteDate(LocalDateTime.now());
+            if (!topicService.addComment(comment)) {
+                throw new ServletException();
+            }
+
+
+        }else if(action.equals("getTopicByUserId")){
+            List<Topic> topicList=topicService.getTopicByUserId(((User)request.getSession().getAttribute("user")).getId());
+            JSONArray jsonArray=new JSONArray(topicList);
+            response.setContentType("application/json");
+            response.getWriter().write(jsonArray.toString());
+
         }
 
 

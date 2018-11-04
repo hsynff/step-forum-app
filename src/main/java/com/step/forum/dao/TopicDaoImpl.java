@@ -13,12 +13,14 @@ import java.util.*;
 
 public class TopicDaoImpl implements TopicDao {
     private final String GET_ALL_TOPIC_SQL = "select t.id_topic, t.title, t.description, t.share_date, t.view_count, u.id_user, u.email, u.first_name, u.last_name, c.id_comment, c.description, c.write_date from topic t inner join user u on t.id_user = u.id_user left join comment c on c.id_topic = t.id_topic order by t.share_date desc";
-    private final String GET_TOPIC_BY_ID_SQL = "select t.id_topic, t.title, t.description as t_description, t.share_date, t.view_count, u.id_user as t_id_user, u.first_name as t_first_name,  u.last_name as t_last_name, c.id_comment, c.description as c_description, c.write_date, u1.id_user as c_id_user, u1.first_name as c_first_name, u1.last_name as c_last_name  from topic t inner join user u on t.id_user=u.id_user\n" +
-            "left join comment c on t.id_topic=c.id_topic left join user u1 on c.id_user=u1.id_user where t.id_topic=? order by write_date asc";
+    private final String GET_TOPIC_BY_ID_SQL = "select t.id_topic, t.title, t.description as t_description, t.share_date, t.view_count, u.id_user as t_id_user, u.first_name as t_first_name,  u.last_name as t_last_name  from topic t inner join user u on t.id_user=u.id_user where t.id_topic=? ";
     private final String GET_POPULAR_TOPICS_SQL = "select t.id_topic, t.title, count(c.id_comment) as comments from topic t left join comment c on t.id_topic=c.id_topic group by t.title having comments>0  order by comments desc limit 7";
     private final String ADD_TOPIC_SQL ="insert into topic(title,description,share_date,view_count,id_user) values(?,?,?,?,?)";
     private final String UPDATE_TOPIC_VIEW_COUNT_SQL="update topic set view_count=view_count+1 where id_topic=?";
     private final String GET_SIMILAR_TOPICS_SQL="select t.id_topic, t.title, t.description, t.share_date, t.view_count, u.id_user, u.email, u.first_name, u.last_name, c.id_comment, c.description, c.write_date from topic t inner join user u on t.id_user = u.id_user left join comment c on c.id_topic = t.id_topic";
+    private final String GET_COMMENTS_BY_TOPIC_ID_SQL="select * from comment c inner join user u on c.id_user=u.id_user where c.id_topic=? order by write_date asc";
+    private final String ADD_COMMENT_SQL="insert into comment(description, write_date, id_topic, id_user) values(?,?,?,?)";
+    private final String GET_TOPICS_BY_USER_ID_SQL="select id_topic, title from topic where id_user=? order by share_date desc limit 7";
     @Override
     public List<Topic> getAllTopic() {
         Connection con = null;
@@ -97,20 +99,7 @@ public class TopicDaoImpl implements TopicDao {
                 user.setFirstName(rs.getString("t_first_name"));
                 user.setLastName(rs.getString("t_last_name"));
                 topic.setUser(user);
-                if (rs.getInt("id_comment") != 0) {
-                    do {
-                        Comment comment = new Comment();
-                        comment.setId(rs.getInt("id_comment"));
-                        comment.setDesc(rs.getString("c_description"));
-                        comment.setWriteDate(rs.getTimestamp("write_date").toLocalDateTime());
-                        User user1 = new User();
-                        user1.setId(rs.getInt("c_id_user"));
-                        user1.setFirstName(rs.getString("c_first_name"));
-                        user1.setLastName(rs.getString("c_last_name"));
-                        comment.setUser(user1);
-                        topic.addComment(comment);
-                    } while (rs.next());
-                }
+
             }
 
         } catch (SQLException e) {
@@ -263,4 +252,96 @@ public class TopicDaoImpl implements TopicDao {
 
         return listTopic;
     }
+
+    @Override
+    public List<Comment> getCommentsByTopicId(int id) {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        List<Comment> listComment = new ArrayList<>();
+        try {
+            con = DbUtil.getConnection();
+            ps = con.prepareStatement(GET_COMMENTS_BY_TOPIC_ID_SQL);
+            ps.setInt(1, id);
+            rs=ps.executeQuery();
+            while (rs.next()){
+                Comment comment=new Comment();
+                comment.setId(rs.getInt("id_comment"));
+                comment.setDesc(rs.getString("description"));
+                comment.setWriteDate(rs.getTimestamp("write_date").toLocalDateTime());
+                User user=new User();
+                user.setId(rs.getInt("id_user"));
+                user.setEmail(rs.getString("email"));
+                user.setFirstName(rs.getString("first_name"));
+                user.setLastName(rs.getString("last_name"));
+                comment.setUser(user);
+                listComment.add(comment);
+
+
+            }
+
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally {
+            DbUtil.closeAll(con,ps,rs);
+        }
+        return listComment;
+    }
+
+    @Override
+    public boolean addComment(Comment comment) {
+        Connection con = null;
+        PreparedStatement ps = null;
+        boolean result=false;
+        try {
+            con = DbUtil.getConnection();
+            ps = con.prepareStatement(ADD_COMMENT_SQL);
+           ps.setString(1,comment.getDesc());
+           ps.setString(2, comment.getWriteDate().toString());
+           ps.setInt(3, comment.getTopic().getId());
+           ps.setInt(4,comment.getUser().getId());
+           ps.executeUpdate();
+           result=true;
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally {
+            DbUtil.closeAll(con,ps);
+        }
+
+
+
+
+        return result;
+    }
+
+    @Override
+    public List<Topic> getTopicByUserId(int idUser) {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        List<Topic>listTopics=new ArrayList<>();
+
+        try {
+            con = DbUtil.getConnection();
+            ps = con.prepareStatement(GET_TOPICS_BY_USER_ID_SQL);
+            ps.setInt(1,idUser);
+            rs=ps.executeQuery();
+            while (rs.next()){
+                Topic topic=new Topic();
+                topic.setId(rs.getInt("id_topic"));
+                topic.setTitle(rs.getString("title"));
+                listTopics.add(topic);
+            }
+
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally {
+            DbUtil.closeAll(con,ps);
+        }
+        return listTopics;
+    }
+
 }

@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Forum :: Topic</title>
 
+
     <c:import url="${pageContext.request.contextPath}/WEB-INF/fragment/imports.jsp"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/topic.js">
+    </script>
 
 </head>
 <body class="topic">
@@ -51,46 +54,19 @@
 
                             <div class="clearfix"></div>
                         </div>
+                        <input type="hidden" id="idInputTopic" value="${param.id}">
                     </div>
                     <!-- MAIN POST -->
 
-
-                    <c:forEach var="comment" items="${topic.commentList}">
-                        <!-- COMMENT -->
-                        <div class="post">
-                            <div class="topwrap">
-                                <div class="userinfo pull-left">
-                                    <div class="avatar">
-                                        <img src="${pageContext.request.contextPath}/resources/images/avatar2.jpg"
-                                             alt=""/>
-                                    </div>
-
-                                </div>
-                                <div class="posttext pull-left">
-                                    <p>${comment.desc}</p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="postinfobot">
-
-                                <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posted on
-                                    : ${comment.writeDate}</div>
-                                <div class="posted pull-left"> ${comment.user.firstName} ${comment.user.lastName}</div>
-                                <div class="posted pull-left"><i class="fa fa-trash-o"></i></div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                        <!-- COMMENT -->
-                    </c:forEach>
-
-
+                   <%--comments--%>
+                    <div id="commentsId"></div>
                     <br><br>
 
                     <c:choose>
                         <c:when test="${sessionScope.user ne null}">
                             <!-- REPLY -->
                             <div class="post">
-                                <form action="#" class="form" method="post">
+
                                     <div class="topwrap">
                                         <div class="userinfo pull-left">
                                             <div class="avatar">
@@ -101,7 +77,7 @@
                                         <div class="posttext pull-left">
                                             <div class="textwraper">
                                                 <div class="postreply">Post a Reply</div>
-                                                <textarea name="reply" id="reply"
+                                                <textarea  id="idInputDesc"
                                                           placeholder="Type your message here"></textarea>
                                             </div>
                                         </div>
@@ -112,7 +88,7 @@
 
                                         <div class="pull-right postreply">
                                             <div class="pull-left">
-                                                <button type="submit" class="btn btn-primary">Post Reply</button>
+                                                <button id="idButtonReply" class="btn btn-primary">Post Reply</button>
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>
@@ -120,7 +96,7 @@
 
                                         <div class="clearfix"></div>
                                     </div>
-                                </form>
+
                             </div>
                             <!-- REPLY -->
                         </c:when>

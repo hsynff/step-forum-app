@@ -69,7 +69,7 @@
 
 
                                     <div>
-                                        <textarea name="desc" id="desc" placeholder="Description"
+                                        <textarea required name="desc" id="desc" placeholder="Description"
                                                   class="form-control"></textarea>
                                     </div>
 
