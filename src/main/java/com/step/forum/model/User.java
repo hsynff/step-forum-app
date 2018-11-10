@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class User {
-
     private int id;
     private String email;
     private String password;
@@ -12,6 +11,7 @@ public class User {
     private String firstName;
     private String token;
     private int status;
+    private String imagePath;
     private Role role;
 
 }

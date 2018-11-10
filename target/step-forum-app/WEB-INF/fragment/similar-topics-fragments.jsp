@@ -17,7 +17,7 @@
         <div class="wrap-ut pull-left">
             <div class="userinfo pull-left">
                 <div class="avatar">
-                    <img src="${pageContext.request.contextPath}/resources/images/avatar.jpg" alt="${topic.user.firstName} ${topic.user.lastName}" title="${topic.user.firstName} ${topic.user.lastName}"/>
+                    <img src="${pageContext.request.contextPath}/uploads/${topic.user.imagePath}" alt="${topic.user.firstName} ${topic.user.lastName}" title="${topic.user.firstName} ${topic.user.lastName}"/>
                 </div>
             </div>
             <div class="posttext pull-left">

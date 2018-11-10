@@ -34,7 +34,7 @@
 
                     <!-- POST -->
                     <div class="post">
-                        <form action="#" class="form newtopic" method="post">
+                        <form action="${pageContext.request.contextPath}/us?action=doRegister" class="form newtopic" method="post" enctype="multipart/form-data">
                             <div class="postinfotop">
                                 <h2>Create New Account</h2>
                             </div>
@@ -53,15 +53,19 @@
                                     <div class="posttext pull-left">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="text" placeholder="First Name" class="form-control"/>
+                                                <input type="text" placeholder="First Name" name="firstName" class="form-control"/>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-                                                <input type="text" placeholder="Last Name" class="form-control"/>
+                                                <input type="text" placeholder="Last Name" name="lastName" class="form-control"/>
                                             </div>
                                         </div>
                                         <div>
-                                            <input type="text" placeholder="User Name" class="form-control"/>
+                                            <input type="text" placeholder="Email" name="email" class="form-control"/>
                                         </div>
+                                        <div>
+                                            <input type="file" name="img" class="form-control" accept="image/jpeg, image/jpg, image/png">
+                                        </div>
+                                        <br>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <input type="password" placeholder="Password" class="form-control"

@@ -12,12 +12,12 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class TopicDaoImpl implements TopicDao {
-    private final String GET_ALL_TOPIC_SQL = "select t.id_topic, t.title, t.description, t.share_date, t.view_count, u.id_user, u.email, u.first_name, u.last_name, c.id_comment, c.description, c.write_date from topic t inner join user u on t.id_user = u.id_user left join comment c on c.id_topic = t.id_topic order by t.share_date desc";
-    private final String GET_TOPIC_BY_ID_SQL = "select t.id_topic, t.title, t.description as t_description, t.share_date, t.view_count, u.id_user as t_id_user, u.first_name as t_first_name,  u.last_name as t_last_name  from topic t inner join user u on t.id_user=u.id_user where t.id_topic=? ";
+    private final String GET_ALL_TOPIC_SQL = "select t.id_topic, t.title, t.description, t.share_date, t.view_count, u.id_user, u.email, u.first_name, u.last_name, u.img, c.id_comment, c.description, c.write_date from topic t inner join user u on t.id_user = u.id_user left join comment c on c.id_topic = t.id_topic order by t.share_date desc";
+    private final String GET_TOPIC_BY_ID_SQL = "select t.id_topic, t.title, t.description as t_description, t.share_date, t.view_count, u.id_user as t_id_user, u.first_name as t_first_name, u.img as t_img, u.last_name as t_last_name  from topic t inner join user u on t.id_user=u.id_user where t.id_topic=? ";
     private final String GET_POPULAR_TOPICS_SQL = "select t.id_topic, t.title, count(c.id_comment) as comments from topic t left join comment c on t.id_topic=c.id_topic group by t.title having comments>0  order by comments desc limit 7";
     private final String ADD_TOPIC_SQL ="insert into topic(title,description,share_date,view_count,id_user) values(?,?,?,?,?)";
     private final String UPDATE_TOPIC_VIEW_COUNT_SQL="update topic set view_count=view_count+1 where id_topic=?";
-    private final String GET_SIMILAR_TOPICS_SQL="select t.id_topic, t.title, t.description, t.share_date, t.view_count, u.id_user, u.email, u.first_name, u.last_name, c.id_comment, c.description, c.write_date from topic t inner join user u on t.id_user = u.id_user left join comment c on c.id_topic = t.id_topic";
+    private final String GET_SIMILAR_TOPICS_SQL="select t.id_topic, t.title, t.description, t.share_date, t.view_count, u.id_user, u.email, u.first_name, u.last_name, u.img, c.id_comment, c.description, c.write_date from topic t inner join user u on t.id_user = u.id_user left join comment c on c.id_topic = t.id_topic";
     private final String GET_COMMENTS_BY_TOPIC_ID_SQL="select * from comment c inner join user u on c.id_user=u.id_user where c.id_topic=? order by write_date asc";
     private final String ADD_COMMENT_SQL="insert into comment(description, write_date, id_topic, id_user) values(?,?,?,?)";
     private final String GET_TOPICS_BY_USER_ID_SQL="select id_topic, title from topic where id_user=? order by share_date desc limit 7";
@@ -49,6 +49,7 @@ public class TopicDaoImpl implements TopicDao {
                     u.setEmail(rs.getString("email"));
                     u.setFirstName(rs.getString("first_name"));
                     u.setLastName(rs.getString("last_name"));
+                    u.setImagePath(rs.getString("img"));
                     t.setUser(u);
                     map.put(t.getId(), t);
                 }
@@ -98,6 +99,7 @@ public class TopicDaoImpl implements TopicDao {
                 user.setId(rs.getInt("t_id_user"));
                 user.setFirstName(rs.getString("t_first_name"));
                 user.setLastName(rs.getString("t_last_name"));
+                user.setImagePath(rs.getString("t_img"));
                 topic.setUser(user);
 
             }
@@ -229,6 +231,7 @@ public class TopicDaoImpl implements TopicDao {
                     u.setEmail(rs.getString("email"));
                     u.setFirstName(rs.getString("first_name"));
                     u.setLastName(rs.getString("last_name"));
+                    u.setImagePath(rs.getString("img"));
                     t.setUser(u);
                     map.put(t.getId(), t);
                 }
@@ -274,6 +277,7 @@ public class TopicDaoImpl implements TopicDao {
                 user.setEmail(rs.getString("email"));
                 user.setFirstName(rs.getString("first_name"));
                 user.setLastName(rs.getString("last_name"));
+                user.setImagePath(rs.getString("img"));
                 comment.setUser(user);
                 listComment.add(comment);
 

@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface UserDao {
     User loginUser(String email, String password) throws UserCredentialsException;
+    boolean registerUser(User user) throws UserCredentialsException;
 }

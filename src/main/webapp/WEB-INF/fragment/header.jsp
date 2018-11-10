@@ -41,7 +41,7 @@
 
                         <div class="avatar pull-left dropdown">
                             <a data-toggle="dropdown" href="#"><img
-                                    src="${pageContext.request.contextPath}/resources/images/avatar.jpg" alt=""/></a> <b
+                                    src="${pageContext.request.contextPath}/uploads/${user.imagePath}" alt=""/></a> <b
                                 class="caret"></b>
                             <ul class="dropdown-menu" role="menu">
                                 <li role="presentation"><a role="menuitem" tabindex="-3" href="/us?action=logout">Log Out</a></li>

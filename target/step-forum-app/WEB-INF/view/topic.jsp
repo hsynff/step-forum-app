@@ -34,7 +34,7 @@
                         <div class="topwrap">
                             <div class="userinfo pull-left">
                                 <div class="avatar">
-                                    <img src="${pageContext.request.contextPath}/resources/images/avatar.jpg" alt=""/>
+                                    <img src="${pageContext.request.contextPath}/uploads/${topic.user.imagePath}" alt=""/>
                                 </div>
 
                             </div>
@@ -70,7 +70,7 @@
                                     <div class="topwrap">
                                         <div class="userinfo pull-left">
                                             <div class="avatar">
-                                                <img src="images/avatar4.jpg" alt=""/>
+                                                <img src="${pageContext.request.contextPath}/uploads/${sessionScope.user.imagePath}" alt=""/>
                                             </div>
 
                                         </div>

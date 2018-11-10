@@ -15,4 +15,9 @@ public class UserServiceImpl implements UserService {
     public User loginUser(String email, String password) throws UserCredentialsException {
         return userDao.loginUser(email, password);
     }
+
+    @Override
+    public boolean registerUser(User user) throws UserCredentialsException {
+        return userDao.registerUser(user);
+    }
 }
