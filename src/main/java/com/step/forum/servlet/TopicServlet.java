@@ -2,6 +2,7 @@ package com.step.forum.servlet;
 
 import com.mysql.cj.xdevapi.JsonArray;
 import com.step.forum.constants.MessageConstants;
+import com.step.forum.constants.TopicConstants;
 import com.step.forum.dao.TopicDaoImpl;
 import com.step.forum.job.PopularTopicsUpdater;
 import com.step.forum.model.Comment;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -75,6 +77,7 @@ public class TopicServlet extends HttpServlet {
             topic.setShareDate(LocalDateTime.now());
             topic.setViewCount(0);
             topic.setUser(user);
+            topic.setStatus(TopicConstants.TOPIC_STATUS_INACTIVE);
             topicService.addTopic(topic);
             request.getSession().setAttribute("message", MessageConstants.SUCCESS_ADD_TOPIC);
             response.sendRedirect("/");
@@ -85,9 +88,11 @@ public class TopicServlet extends HttpServlet {
             String[] keywords = title.trim().split(" ");
             keywords = Arrays.stream(keywords).filter(s -> s.length()>= 3).toArray(s -> new String[s]);
             System.out.println(Arrays.toString(keywords));
-            List<Topic> topicList = topicService.getSimilarTopics(keywords);
+            List<Topic> topicList = keywords.length == 0 ? new ArrayList<>() : topicService.getSimilarTopics(keywords);
             request.setAttribute("topicList", topicList);
             address = "/WEB-INF/fragment/similar-topics-fragments.jsp";
+
+
         }else if (action.equals("getCommentsByTopicId")){
             int id=Integer.parseInt(request.getParameter("id"));
             List<Comment> listComments=topicService.getCommentsByTopicId(id);
@@ -111,7 +116,8 @@ public class TopicServlet extends HttpServlet {
 
 
         }else if(action.equals("getTopicByUserId")){
-            List<Topic> topicList=topicService.getTopicByUserId(((User)request.getSession().getAttribute("user")).getId());
+            User user = (User) request.getSession().getAttribute("user");
+            List<Topic> topicList=topicService.getTopicByUserId(user.getId());
             JSONArray jsonArray=new JSONArray(topicList);
             response.setContentType("application/json");
             response.getWriter().write(jsonArray.toString());

@@ -27,6 +27,9 @@
                 })
             }
         })
+    })
+
+    function getTopicsByUserId() {
         $.ajax({
             url: '/ts?action=getTopicByUserId',
             type: 'GET',
@@ -37,13 +40,9 @@
                     $('#idDivMyTopics').append(' <div class="divline"></div><div class="blocktxt"><a href="/ns?action=topic&id='+topic.id+'">'+topic.title+'</a></div>')
 
                 })
-
-
             }
-
-
         })
-    })
+    }
 </script>
 
 <div class="col-lg-4 col-md-4">
@@ -62,6 +61,7 @@
 
     <!-- -->
     <c:if test="${sessionScope.user ne null}">
+        <script> getTopicsByUserId(); </script>
         <div class="sidebarblock">
             <h3 class="bg-primary">My Topics</h3>
             <div id="idDivMyTopics">

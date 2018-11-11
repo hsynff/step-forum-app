@@ -41,6 +41,10 @@ public class NavigationServlet extends HttpServlet {
             String idT = request.getParameter("id");
             int idTopic = Integer.parseInt(idT);
             Topic topic = topicService.getTopicById(idTopic);
+            if (topic == null){
+                response.sendRedirect("/");
+                return;
+            }
             request.setAttribute("topic", topic);
             topicService.updateTopicViewCount(idTopic);
 

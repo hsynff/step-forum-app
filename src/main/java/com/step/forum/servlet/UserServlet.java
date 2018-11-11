@@ -69,58 +69,56 @@ public class UserServlet extends HttpServlet {
         } else if (action.equals("doRegister")) {
 
 
-            System.out.println(Config.getImageUploadPath());
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String email = request.getParameter("email");
+            String password = request.getParameter("pass");
 
-//            String firstName = request.getParameter("firstName");
-//            String lastName = request.getParameter("lastName");
-//            String email = request.getParameter("email");
-//            String password = request.getParameter("pass");
-//
-//
-//            //TODO validate
-//            if (!password.equals(request.getParameter("pass2"))) {
-//                request.setAttribute("message", MessageConstants.ERROR_PASSWORD_IS_NOT_MATCH);
-//                request.getRequestDispatcher("/WEB-INF/view/new-account.jsp").forward(request, response);
-//                return;
-//            }
-//
-//            Part img = request.getPart("img");
-//
-//            Path pathToSaveFile = Paths.get(getServletContext().getRealPath("/"), "uploads", email);
-//
-//            if (!Files.exists(pathToSaveFile)) {
-//                Files.createDirectories(pathToSaveFile);
-//            }
-//
-//            Path file = Paths.get(pathToSaveFile.toString(), img.getSubmittedFileName());
-//
-//            Files.copy(img.getInputStream(), file, StandardCopyOption.REPLACE_EXISTING);
-//
-//            Path pathToSaveDb = Paths.get(email, img.getSubmittedFileName());
-//
-//            User user = new User();
-//            user.setFirstName(firstName);
-//            user.setLastName(lastName);
-//            user.setImagePath(pathToSaveDb.toString());
-//            user.setEmail(email);
-//            user.setPassword(password);
-//            user.setStatus(UserConstants.USER_STATUS_INACTIVE);
-//            user.setToken(UUID.randomUUID().toString());
-//            Role role = new Role();
-//            role.setId(UserConstants.ROLE_ID_USER);
-//            user.setRole(role);
-//            try {
-//                if (userService.registerUser(user)) {
-//                    request.getSession().setAttribute("message", MessageConstants.SUCCESS_REGISTER);
-//                    response.sendRedirect("/");
-//                } else {
-//                    request.setAttribute("message", MessageConstants.ERROR_INTERNAL);
-//                    request.getRequestDispatcher("/WEB-INF/view/new-account.jsp").forward(request, response);
-//                }
-//            } catch (UserCredentialsException e) {
-//                request.setAttribute("message", e.getMessage());
-//                request.getRequestDispatcher("/WEB-INF/view/new-account.jsp").forward(request, response);
-//            }
+
+            //TODO validate
+            if (!password.equals(request.getParameter("pass2"))) {
+                request.setAttribute("message", MessageConstants.ERROR_PASSWORD_IS_NOT_MATCH);
+                request.getRequestDispatcher("/WEB-INF/view/new-account.jsp").forward(request, response);
+                return;
+            }
+
+            Part img = request.getPart("img");
+
+            Path pathToSaveFile = Paths.get(Config.getImageUploadPath(), email);
+
+            if (!Files.exists(pathToSaveFile)) {
+                Files.createDirectories(pathToSaveFile);
+            }
+
+            Path file = Paths.get(pathToSaveFile.toString(), img.getSubmittedFileName());
+
+            Files.copy(img.getInputStream(), file, StandardCopyOption.REPLACE_EXISTING);
+
+            Path pathToSaveDb = Paths.get(email, img.getSubmittedFileName());
+
+            User user = new User();
+            user.setFirstName(firstName);
+            user.setLastName(lastName);
+            user.setImagePath(pathToSaveDb.toString());
+            user.setEmail(email);
+            user.setPassword(password);
+            user.setStatus(UserConstants.USER_STATUS_INACTIVE);
+            user.setToken(UUID.randomUUID().toString());
+            Role role = new Role();
+            role.setId(UserConstants.ROLE_ID_USER);
+            user.setRole(role);
+            try {
+                if (userService.registerUser(user)) {
+                    request.getSession().setAttribute("message", MessageConstants.SUCCESS_REGISTER);
+                    response.sendRedirect("/");
+                } else {
+                    request.setAttribute("message", MessageConstants.ERROR_INTERNAL);
+                    request.getRequestDispatcher("/WEB-INF/view/new-account.jsp").forward(request, response);
+                }
+            } catch (UserCredentialsException e) {
+                request.setAttribute("message", e.getMessage());
+                request.getRequestDispatcher("/WEB-INF/view/new-account.jsp").forward(request, response);
+            }
 
         }
 

@@ -18,6 +18,7 @@ public class Topic {
     private User user;
     private List<Comment> commentList;
     private int commentCount;
+    private int status;
 
     public Topic(){
         commentList = new ArrayList<>();

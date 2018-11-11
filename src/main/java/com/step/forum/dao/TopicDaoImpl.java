@@ -1,5 +1,6 @@
 package com.step.forum.dao;
 
+import com.step.forum.constants.TopicConstants;
 import com.step.forum.model.Comment;
 import com.step.forum.model.Topic;
 import com.step.forum.model.User;
@@ -12,15 +13,15 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class TopicDaoImpl implements TopicDao {
-    private final String GET_ALL_TOPIC_SQL = "select t.id_topic, t.title, t.description, t.share_date, t.view_count, u.id_user, u.email, u.first_name, u.last_name, u.img, c.id_comment, c.description, c.write_date from topic t inner join user u on t.id_user = u.id_user left join comment c on c.id_topic = t.id_topic order by t.share_date desc";
-    private final String GET_TOPIC_BY_ID_SQL = "select t.id_topic, t.title, t.description as t_description, t.share_date, t.view_count, u.id_user as t_id_user, u.first_name as t_first_name, u.img as t_img, u.last_name as t_last_name  from topic t inner join user u on t.id_user=u.id_user where t.id_topic=? ";
-    private final String GET_POPULAR_TOPICS_SQL = "select t.id_topic, t.title, count(c.id_comment) as comments from topic t left join comment c on t.id_topic=c.id_topic group by t.title having comments>0  order by comments desc limit 7";
-    private final String ADD_TOPIC_SQL ="insert into topic(title,description,share_date,view_count,id_user) values(?,?,?,?,?)";
+    private final String GET_ALL_TOPIC_SQL = "select t.id_topic, t.title, t.description, t.share_date, t.view_count, t.status, u.id_user, u.email, u.first_name, u.last_name, u.img, c.id_comment, c.description, c.write_date from topic t inner join user u on t.id_user = u.id_user left join comment c on c.id_topic = t.id_topic where t.status = ? order by t.share_date desc";
+    private final String GET_TOPIC_BY_ID_SQL = "select t.id_topic, t.title, t.description as t_description, t.share_date, t.view_count, t.status, u.id_user as t_id_user, u.first_name as t_first_name, u.img as t_img, u.last_name as t_last_name  from topic t inner join user u on t.id_user=u.id_user where t.id_topic=? and t.status = ? ";
+    private final String GET_POPULAR_TOPICS_SQL = "select t.id_topic, t.title, count(c.id_comment) as comments from topic t left join comment c on t.id_topic=c.id_topic where t.status = ? group by t.title having comments>0  order by comments desc limit 7";
+    private final String ADD_TOPIC_SQL ="insert into topic(title, description, share_date, view_count, id_user, status) values(?, ?, ?, ?, ?, ?)";
     private final String UPDATE_TOPIC_VIEW_COUNT_SQL="update topic set view_count=view_count+1 where id_topic=?";
-    private final String GET_SIMILAR_TOPICS_SQL="select t.id_topic, t.title, t.description, t.share_date, t.view_count, u.id_user, u.email, u.first_name, u.last_name, u.img, c.id_comment, c.description, c.write_date from topic t inner join user u on t.id_user = u.id_user left join comment c on c.id_topic = t.id_topic";
+    private final String GET_SIMILAR_TOPICS_SQL="select t.id_topic, t.title, t.description, t.share_date, t.view_count, u.id_user, u.email, u.first_name, u.last_name, u.img, c.id_comment, c.description, c.write_date from topic t inner join user u on t.id_user = u.id_user left join comment c on c.id_topic = t.id_topic where t.status = ?";
     private final String GET_COMMENTS_BY_TOPIC_ID_SQL="select * from comment c inner join user u on c.id_user=u.id_user where c.id_topic=? order by write_date asc";
     private final String ADD_COMMENT_SQL="insert into comment(description, write_date, id_topic, id_user) values(?,?,?,?)";
-    private final String GET_TOPICS_BY_USER_ID_SQL="select id_topic, title from topic where id_user=? order by share_date desc limit 7";
+    private final String GET_TOPICS_BY_USER_ID_SQL="select id_topic, title from topic where id_user=? and status = ? order by share_date desc limit 7";
     @Override
     public List<Topic> getAllTopic() {
         Connection con = null;
@@ -31,6 +32,7 @@ public class TopicDaoImpl implements TopicDao {
         try {
             con = DbUtil.getConnection();
             ps = con.prepareStatement(GET_ALL_TOPIC_SQL);
+            ps.setInt(1, TopicConstants.TOPIC_STATUS_ACTIVE);
             rs = ps.executeQuery();
             Map<Integer, Topic> map = new LinkedHashMap<>();
             while (rs.next()) {
@@ -43,6 +45,7 @@ public class TopicDaoImpl implements TopicDao {
                     t.setDesc(rs.getString("description"));
                     t.setShareDate(rs.getTimestamp("share_date").toLocalDateTime());
                     t.setViewCount(rs.getInt("view_count"));
+                    t.setStatus(rs.getInt("status"));
 
                     User u = new User();
                     u.setId(rs.getInt("id_user"));
@@ -86,6 +89,7 @@ public class TopicDaoImpl implements TopicDao {
             con = DbUtil.getConnection();
             ps = con.prepareStatement(GET_TOPIC_BY_ID_SQL);
             ps.setInt(1, id);
+            ps.setInt(2, TopicConstants.TOPIC_STATUS_ACTIVE);
             rs = ps.executeQuery();
             if (rs.next()) {
                 topic = new Topic();
@@ -121,6 +125,7 @@ public class TopicDaoImpl implements TopicDao {
         try {
             con = DbUtil.getConnection();
             ps = con.prepareStatement(GET_POPULAR_TOPICS_SQL);
+            ps.setInt(1, TopicConstants.TOPIC_STATUS_ACTIVE);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Topic topic = new Topic();
@@ -151,6 +156,8 @@ public class TopicDaoImpl implements TopicDao {
             ps.setString(3, topic.getShareDate().toString());
             ps.setInt(4, topic.getViewCount());
             ps.setInt(5, topic.getUser().getId());
+            ps.setInt(6, topic.getStatus());
+
 
            ps.executeUpdate();
            result=true;
@@ -199,19 +206,21 @@ public class TopicDaoImpl implements TopicDao {
         ResultSet rs = null;
         List<Topic> listTopic = new ArrayList<>();
         StringBuilder stringBuilder=new StringBuilder(GET_SIMILAR_TOPICS_SQL);
-        stringBuilder.append(" where");
+        stringBuilder.append(" and (");
         for (int i=0; i < keywords.length; i++){
             stringBuilder.append(" t.title like ?");
             if (i < keywords.length-1){
                 stringBuilder.append(" or");
             }
         }
+        stringBuilder.append(")");
         stringBuilder.append(" order by t.share_date desc");
         try {
             con = DbUtil.getConnection();
             ps = con.prepareStatement(stringBuilder.toString());
+            ps.setInt(1, TopicConstants.TOPIC_STATUS_ACTIVE);
             for (int i = 0; i < keywords.length; i++) {
-                ps.setString(i+1, "%"+keywords[i]+"%");
+                ps.setString(i+2, "%"+keywords[i]+"%");
             }
             rs = ps.executeQuery();
             Map<Integer, Topic> map = new LinkedHashMap<>();
@@ -331,6 +340,7 @@ public class TopicDaoImpl implements TopicDao {
             con = DbUtil.getConnection();
             ps = con.prepareStatement(GET_TOPICS_BY_USER_ID_SQL);
             ps.setInt(1,idUser);
+            ps.setInt(2, TopicConstants.TOPIC_STATUS_ACTIVE);
             rs=ps.executeQuery();
             while (rs.next()){
                 Topic topic=new Topic();

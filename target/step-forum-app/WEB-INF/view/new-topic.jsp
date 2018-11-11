@@ -21,15 +21,9 @@
                       $('#idSimilarTopics').html(data);
 
                   }
-
-
-
               })
-
            });
-
         });
-
 
     </script>
 
