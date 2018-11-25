@@ -7,29 +7,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="579ab3f0-21d6-409a-b53f-c5f7922175bd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/step-forum-app.war" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/step-forum-app/uploads/default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/step-forum-app/uploads/elvin@gmail.com/p2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/step-forum-app/uploads/vnesirov@gmail.com/p1.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/constants/UserConstants.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/constants/UserConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/dao/TopicDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/dao/TopicDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/dao/TopicDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/dao/TopicDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/model/Topic.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/model/Topic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/dao/UserDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/dao/UserDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/dao/UserDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/dao/UserDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/job/PopularTopicsUpdater.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/job/PopularTopicsUpdater.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/service/TopicService.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/service/TopicService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/service/TopicServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/service/TopicServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/service/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/service/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/service/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/servlet/HomeServlet.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/servlet/HomeServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/servlet/NavigationServlet.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/servlet/NavigationServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/servlet/TopicServlet.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/servlet/TopicServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/step/forum/servlet/UserServlet.class" afterPath="$PROJECT_DIR$/target/classes/com/step/forum/servlet/UserServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/constants/UserConstants.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/constants/UserConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/dao/TopicDAO.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/dao/TopicDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/dao/TopicDaoImpl.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/dao/TopicDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/model/Topic.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/model/Topic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/dao/UserDAO.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/dao/UserDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/dao/UserDaoImpl.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/dao/UserDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/job/PopularTopicsUpdater.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/job/PopularTopicsUpdater.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/service/TopicService.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/service/TopicService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/service/TopicServiceImpl.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/service/TopicServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/service/UserService.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/service/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/service/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/service/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/servlet/HomeServlet.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/servlet/HomeServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/servlet/NavigationServlet.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/servlet/NavigationServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/servlet/TopicServlet.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/servlet/TopicServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/servlet/UserServlet.class" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/classes/com/step/forum/servlet/UserServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/constants/NavigationConstants.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/constants/NavigationConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/constants/UserConstants.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/constants/UserConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/model/Topic.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/model/Topic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDaoImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/job/PopularTopicsUpdater.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/job/PopularTopicsUpdater.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicService.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/service/UserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/HomeServlet.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/HomeServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/NavigationServlet.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/NavigationServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/TopicServlet.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/TopicServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/UserServlet.java" afterPath="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/UserServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/right-menu.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/right-menu.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/new-topic.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/new-topic.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/fragment/header.jsp" afterPath="$PROJECT_DIR$/target/step-forum-app/WEB-INF/fragment/header.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,54 +65,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TopicServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/TopicServlet.java">
+      <file leaf-file-name="UserServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/UserServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="90" column="78" lean-forward="false" selection-start-line="90" selection-start-column="78" selection-end-line="90" selection-end-column="78" />
+            <state relative-caret-position="-7">
+              <caret line="110" column="63" lean-forward="false" selection-start-line="110" selection-start-column="63" selection-end-line="110" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
+      <file leaf-file-name="SecurityFilter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/filters/SecurityFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="73" column="87" lean-forward="true" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
+            <state relative-caret-position="407">
+              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="right-menu.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/right-menu.jsp">
+      <file leaf-file-name="CryptoUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/util/CryptoUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="56" column="45" lean-forward="true" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
+            <state relative-caret-position="424">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NavigationServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/NavigationServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="45" column="23" lean-forward="true" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TopicServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding>
-                <element signature="e#1023#1024#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -97,67 +98,83 @@
       <file leaf-file-name="TopicDaoImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="332" column="52" lean-forward="false" selection-start-line="332" selection-start-column="52" selection-end-line="332" selection-end-column="52" />
+            <state relative-caret-position="119">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="17" selection-end-column="0" />
               <folding>
-                <element signature="method#getAllTopic#0;class#TopicDaoImpl#0" expanded="false" />
-                <element signature="method#getTopicById#0;class#TopicDaoImpl#0" expanded="false" />
-                <element signature="method#getPopularTopics#0;class#TopicDaoImpl#0" expanded="false" />
-                <element signature="method#addTopic#0;class#TopicDaoImpl#0" expanded="false" />
-                <element signature="method#updateTopicViewCount#0;class#TopicDaoImpl#0" expanded="false" />
-                <element signature="method#getSimilarTopics#0;class#TopicDaoImpl#0" expanded="false" />
-                <element signature="method#getCommentsByTopicId#0;class#TopicDaoImpl#0" expanded="false" />
-                <element signature="method#addComment#0;class#TopicDaoImpl#0" expanded="false" />
-                <element signature="method#getTopicByUserId#0;class#TopicDaoImpl#0" expanded="false" />
-                <marker date="1541926333786" expanded="true" signature="454:779" ph="select t.id_... topic" />
-                <marker date="1541926333786" expanded="true" signature="830:1098" ph="select t.id_... topic" />
-                <marker date="1541926333786" expanded="true" signature="830:1115" ph="select t.id_... topic" />
-                <marker date="1541926333786" expanded="true" signature="1170:1373" ph="select t.id_... topic" />
-                <marker date="1541926333786" expanded="true" signature="1417:1520" ph="insert into topic... " />
-                <marker date="1541926333786" expanded="true" signature="1577:1634" ph="update topic... " />
-                <marker date="1541926333786" expanded="true" signature="2032:2139" ph="select * fro... comment" />
-                <marker date="1541926333786" expanded="true" signature="2184:2263" ph="insert into comment... " />
-                <marker date="1541926333786" expanded="true" signature="2318:2415" ph="select id_to... topic" />
+                <marker date="1543044383350" expanded="true" signature="454:779" ph="select t.id_... topic" />
+                <marker date="1543044383350" expanded="true" signature="830:1098" ph="select t.id_... topic" />
+                <marker date="1543044383350" expanded="true" signature="830:1115" ph="select t.id_... topic" />
+                <marker date="1543044383350" expanded="true" signature="1170:1373" ph="select t.id_... topic" />
+                <marker date="1543044383350" expanded="true" signature="1418:1521" ph="insert into topic... " />
+                <marker date="1543044383350" expanded="true" signature="1580:1637" ph="update topic... " />
+                <marker date="1543044383350" expanded="true" signature="2039:2146" ph="select * fro... comment" />
+                <marker date="1543044383350" expanded="true" signature="2193:2272" ph="insert into comment... " />
+                <marker date="1543044383350" expanded="true" signature="2329:2426" ph="select id_to... topic" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavigationConstants.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/constants/NavigationConstants.java">
+      <file leaf-file-name="TopicDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            <state relative-caret-position="-7">
+              <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="similar-topics-fragments.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/similar-topics-fragments.jsp">
+      <file leaf-file-name="conf.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/conf.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="90" lean-forward="false" selection-start-line="19" selection-start-column="90" selection-end-line="19" selection-end-column="90" />
+            <state relative-caret-position="0">
+              <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new-topic.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/new-topic.jsp">
+      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+            <state relative-caret-position="85">
+              <caret line="10" column="96" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="96" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="topic.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/topic.js">
+      <file leaf-file-name="UserDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+            <state relative-caret-position="153">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="0" />
+              <folding>
+                <marker date="1543050263792" expanded="true" signature="596:637" ph="select count... user" />
+                <marker date="1543050263792" expanded="true" signature="688:805" ph="insert into user... " />
+                <marker date="1543050263792" expanded="true" signature="858:892" ph="select * fro... user" />
+                <marker date="1543050263792" expanded="true" signature="954:1049" ph="select * fro... action" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageConstants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/constants/MessageConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/service/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="29" column="51" lean-forward="false" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -200,9 +217,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/new_topic.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/02_topic.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/new_topic.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/footer.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/model/Comment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/model/Role.java" />
@@ -212,29 +226,18 @@
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/util/TopicUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDAO.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/job/PopularTopicsUpdater.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/exceptions/UserCredentialsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/constants/MessageConstant.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/HomeServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/Similar-topics-fragments.jsp" />
         <option value="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.11/mysql-connector-java-8.0.11.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class" />
         <option value="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.11/mysql-connector-java-8.0.11.jar!/com/mysql/cj/jdbc/exceptions/SQLExceptionsMapping.class" />
         <option value="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.11/mysql-connector-java-8.0.11.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/topic.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/constants/UserConstants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/constants/MessageConstants.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/new-account.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/custom.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/topic.jsp" />
@@ -242,15 +245,29 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/similar-topics-fragments.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/util/Config.java" />
         <option value="$PROJECT_DIR$/src/main/resources/conf.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/UserServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/ResourceServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/model/Topic.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/constants/TopicConstants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/NavigationServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/right-menu.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/TopicServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/new-topic.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/job/PopularTopicsUpdater.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/HomeServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/NavigationServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/TopicServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/constants/NavigationConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/constants/UserConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/filters/SecurityFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/servlet/UserServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/step/forum/util/CryptoUtil.java" />
       </list>
     </option>
   </component>
@@ -313,10 +330,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -366,7 +381,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="forum" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="step-forum-app" type="b2602c69:ProjectViewProjectNode" />
@@ -375,69 +390,32 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="forum" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="step-forum-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="step-forum-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="step-forum-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="step-forum-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="step-forum-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="step-forum-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="step-forum-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="step-forum-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="step-forum-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="step-forum-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="step-forum-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="step-forum-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="fragment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="step-forum-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="step-forum-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -447,16 +425,19 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.41034484" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../step-course-app" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Joshgun\IdeaProjects\step-forum-app\target\step-forum-app\uploads" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Joshgun\IdeaProjects\step-forum-app\src\main\webapp\resources\images" />
       <recent name="C:\Users\Joshgun\IdeaProjects\step-forum-app\src\main\webapp\resources" />
       <recent name="C:\Users\Joshgun\IdeaProjects\step-forum-app\src\main\webapp\WEB-INF\view" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.step.forum.util" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Joshgun\IdeaProjects\step-forum-app\target\step-forum-app\uploads" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -471,7 +452,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Unnamed">
+  <component name="RunManager" selected="Application.CryptoUtil">
+    <configuration name="CryptoUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.step.forum.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.step.forum.util.CryptoUtil" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="step-forum-app" />
+      <envs />
+    </configuration>
     <configuration name="TopicUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -492,6 +492,7 @@
       <envs />
     </configuration>
     <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.29" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="step-forum-app:war exploded">
@@ -645,13 +646,15 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
       <item index="1" class="java.lang.String" itemvalue="Application.TopicUtil" />
+      <item index="2" class="java.lang.String" itemvalue="Application.CryptoUtil" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.TopicUtil" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Application.CryptoUtil" />
+        <item index="1" class="java.lang.String" itemvalue="Application.TopicUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -678,11 +681,13 @@
       <workItem from="1541830625593" duration="9284000" />
       <workItem from="1541916353769" duration="2574000" />
       <workItem from="1541924120240" duration="2633000" />
+      <workItem from="1543042900391" duration="8329000" />
+      <workItem from="1543126957215" duration="4097000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66268000" />
+    <option name="totallyTimeSpent" value="78694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -698,20 +703,20 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7561375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2667758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26626325" sideWeight="0.8134206" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2632375" sideWeight="0.18657938" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.80360067" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23827533" sideWeight="0.19639935" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -727,41 +732,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/right-menu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/TopicServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/new-topic.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/similar-topics-fragments.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/NavigationServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -773,7 +749,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
           <caret line="85" column="58" lean-forward="true" selection-start-line="85" selection-start-column="58" selection-end-line="85" selection-end-column="58" />
-          <folding />
+          <folding>
+            <element signature="method#init#0;class#TopicServlet#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -802,10 +780,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="43" column="51" lean-forward="true" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
-          <folding>
-            <element signature="e#965#966#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -822,24 +797,15 @@
         <state relative-caret-position="4182">
           <caret line="255" column="44" lean-forward="true" selection-start-line="255" selection-start-column="44" selection-end-line="255" selection-end-column="44" />
           <folding>
-            <element signature="method#getAllTopic#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#getTopicById#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#getPopularTopics#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#addTopic#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#updateTopicViewCount#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#getSimilarTopics#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#getCommentsByTopicId#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#addComment#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#getTopicByUserId#0;class#TopicDaoImpl#0" expanded="false" />
-            <marker date="1541926333786" expanded="true" signature="454:779" ph="select t.id_... topic" />
-            <marker date="1541926333786" expanded="true" signature="830:1098" ph="select t.id_... topic" />
-            <marker date="1541926333786" expanded="true" signature="830:1115" ph="select t.id_... topic" />
-            <marker date="1541926333786" expanded="true" signature="1170:1373" ph="select t.id_... topic" />
-            <marker date="1541926333786" expanded="true" signature="1417:1520" ph="insert into topic... " />
-            <marker date="1541926333786" expanded="true" signature="1577:1634" ph="update topic... " />
-            <marker date="1541926333786" expanded="true" signature="2032:2139" ph="select * fro... comment" />
-            <marker date="1541926333786" expanded="true" signature="2184:2263" ph="insert into comment... " />
-            <marker date="1541926333786" expanded="true" signature="2318:2415" ph="select id_to... topic" />
+            <marker date="1543044383350" expanded="true" signature="454:779" ph="select t.id_... topic" />
+            <marker date="1543044383350" expanded="true" signature="830:1098" ph="select t.id_... topic" />
+            <marker date="1543044383350" expanded="true" signature="830:1115" ph="select t.id_... topic" />
+            <marker date="1543044383350" expanded="true" signature="1170:1373" ph="select t.id_... topic" />
+            <marker date="1543044383350" expanded="true" signature="1418:1521" ph="insert into topic... " />
+            <marker date="1543044383350" expanded="true" signature="1580:1637" ph="update topic... " />
+            <marker date="1543044383350" expanded="true" signature="2039:2146" ph="select * fro... comment" />
+            <marker date="1543044383350" expanded="true" signature="2193:2272" ph="insert into comment... " />
+            <marker date="1543044383350" expanded="true" signature="2329:2426" ph="select id_to... topic" />
           </folding>
         </state>
       </provider>
@@ -879,42 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="68" lean-forward="false" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/constants/MessageConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="81" lean-forward="false" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/HomeServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/new-account.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -926,13 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="79" column="49" lean-forward="true" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -961,22 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -984,7 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,42 +906,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/conf.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/UserServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="94" column="84" lean-forward="false" selection-start-line="94" selection-start-column="51" selection-end-line="94" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/model/Action.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/ResourceServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="47" column="82" lean-forward="false" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
           <folding />
         </state>
       </provider>
@@ -1048,69 +922,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/constants/UserConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/constants/TopicConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/NavigationServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="45" column="23" lean-forward="true" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="73" column="87" lean-forward="true" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
-          <folding />
+        <state relative-caret-position="1241">
+          <caret line="73" column="87" lean-forward="false" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/right-menu.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="56" column="45" lean-forward="true" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <element signature="e#1023#1024#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/TopicServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="90" column="78" lean-forward="false" selection-start-line="90" selection-start-column="78" selection-end-line="90" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/topic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="952">
+          <caret line="56" column="45" lean-forward="false" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1118,7 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="90" lean-forward="false" selection-start-line="19" selection-start-column="90" selection-end-line="19" selection-end-column="90" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,41 +954,198 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="65" lean-forward="false" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/service/TopicServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="55" column="8" lean-forward="false" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/job/PopularTopicsUpdater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="29" column="44" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/topic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/ResourceServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/HomeServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="63" column="114" lean-forward="false" selection-start-line="63" selection-start-column="114" selection-end-line="63" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/NavigationServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="68" column="52" lean-forward="false" selection-start-line="68" selection-start-column="52" selection-end-line="68" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/constants/NavigationConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/TopicServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="142" column="80" lean-forward="false" selection-start-line="142" selection-start-column="80" selection-end-line="142" selection-end-column="80" />
+          <folding>
+            <element signature="method#init#0;class#TopicServlet#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/constants/UserConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="12" column="71" lean-forward="false" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="29" column="51" lean-forward="false" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/jre/lib/rt.jar!/sun/nio/fs/WindowsException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/conf.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/servlet/UserServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="110" column="63" lean-forward="false" selection-start-line="110" selection-start-column="63" selection-end-line="110" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/dao/TopicDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="332" column="52" lean-forward="false" selection-start-line="332" selection-start-column="52" selection-end-line="332" selection-end-column="52" />
+        <state relative-caret-position="119">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="method#getAllTopic#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#getTopicById#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#getPopularTopics#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#addTopic#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#updateTopicViewCount#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#getSimilarTopics#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#getCommentsByTopicId#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#addComment#0;class#TopicDaoImpl#0" expanded="false" />
-            <element signature="method#getTopicByUserId#0;class#TopicDaoImpl#0" expanded="false" />
-            <marker date="1541926333786" expanded="true" signature="454:779" ph="select t.id_... topic" />
-            <marker date="1541926333786" expanded="true" signature="830:1098" ph="select t.id_... topic" />
-            <marker date="1541926333786" expanded="true" signature="830:1115" ph="select t.id_... topic" />
-            <marker date="1541926333786" expanded="true" signature="1170:1373" ph="select t.id_... topic" />
-            <marker date="1541926333786" expanded="true" signature="1417:1520" ph="insert into topic... " />
-            <marker date="1541926333786" expanded="true" signature="1577:1634" ph="update topic... " />
-            <marker date="1541926333786" expanded="true" signature="2032:2139" ph="select * fro... comment" />
-            <marker date="1541926333786" expanded="true" signature="2184:2263" ph="insert into comment... " />
-            <marker date="1541926333786" expanded="true" signature="2318:2415" ph="select id_to... topic" />
+            <marker date="1543044383350" expanded="true" signature="454:779" ph="select t.id_... topic" />
+            <marker date="1543044383350" expanded="true" signature="830:1098" ph="select t.id_... topic" />
+            <marker date="1543044383350" expanded="true" signature="830:1115" ph="select t.id_... topic" />
+            <marker date="1543044383350" expanded="true" signature="1170:1373" ph="select t.id_... topic" />
+            <marker date="1543044383350" expanded="true" signature="1418:1521" ph="insert into topic... " />
+            <marker date="1543044383350" expanded="true" signature="1580:1637" ph="update topic... " />
+            <marker date="1543044383350" expanded="true" signature="2039:2146" ph="select * fro... comment" />
+            <marker date="1543044383350" expanded="true" signature="2193:2272" ph="insert into comment... " />
+            <marker date="1543044383350" expanded="true" signature="2329:2426" ph="select id_to... topic" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/constants/NavigationConstants.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/util/CryptoUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        <state relative-caret-position="424">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="96" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/dao/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1543050263792" expanded="true" signature="596:637" ph="select count... user" />
+            <marker date="1543050263792" expanded="true" signature="688:805" ph="insert into user... " />
+            <marker date="1543050263792" expanded="true" signature="858:892" ph="select * fro... user" />
+            <marker date="1543050263792" expanded="true" signature="954:1049" ph="select * fro... action" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/constants/MessageConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/step/forum/filters/SecurityFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -1,5 +1,6 @@
 package com.step.forum.servlet;
 
+import com.step.forum.constants.NavigationConstants;
 import com.step.forum.dao.TopicDaoImpl;
 import com.step.forum.model.Topic;
 import com.step.forum.service.TopicService;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet(name = "NavigationServlet", urlPatterns = "/ns")
 public class NavigationServlet extends HttpServlet {
@@ -37,25 +39,34 @@ public class NavigationServlet extends HttpServlet {
         }
 
 
-        if (action.equals("topic")) {
+        if (action.equals(NavigationConstants.ACTION_TOPIC)) {
             String idT = request.getParameter("id");
             int idTopic = Integer.parseInt(idT);
-            Topic topic = topicService.getTopicById(idTopic);
+            Topic topic = null;
+            try {
+                topic = topicService.getTopicById(idTopic);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             if (topic == null){
                 response.sendRedirect("/");
                 return;
             }
             request.setAttribute("topic", topic);
-            topicService.updateTopicViewCount(idTopic);
+            try {
+                topicService.updateTopicViewCount(idTopic);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
-            address = "/WEB-INF/view/topic.jsp";
+            address = NavigationConstants.PAGE_TOPIC;
 
-        } else if (action.equals("new-topic")) {
-            address = "/WEB-INF/view/new-topic.jsp";
-        } else if (action.equals("new-account")) {
-            address = "/WEB-INF/view/new-account.jsp";
-        } else if (action.equals("login")) {
-            address = "/WEB-INF/view/login.jsp";
+        } else if (action.equals(NavigationConstants.ACTION_NEW_TOPIC)) {
+            address = NavigationConstants.PAGE_NEW_TOPIC;
+        } else if (action.equals(NavigationConstants.ACTION_NEW_ACCOUNT)) {
+            address = NavigationConstants.PAGE_NEW_ACCOUNT;
+        } else if (action.equals(NavigationConstants.ACTION_LOGIN)) {
+            address = NavigationConstants.PAGE_LOGIN;
         }
 
 

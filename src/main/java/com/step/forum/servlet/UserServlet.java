@@ -1,6 +1,7 @@
 package com.step.forum.servlet;
 
 import com.step.forum.constants.MessageConstants;
+import com.step.forum.constants.NavigationConstants;
 import com.step.forum.constants.UserConstants;
 import com.step.forum.dao.UserDaoImpl;
 import com.step.forum.exceptions.UserCredentialsException;
@@ -9,6 +10,7 @@ import com.step.forum.model.User;
 import com.step.forum.service.UserService;
 import com.step.forum.service.UserServiceImpl;
 import com.step.forum.util.Config;
+import com.step.forum.util.CryptoUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -20,6 +22,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.sql.SQLException;
 import java.util.UUID;
 
 @WebServlet(name = "UserServlet", urlPatterns = "/us")
@@ -47,26 +50,30 @@ public class UserServlet extends HttpServlet {
             return;
         }
 
-        if (action.equals("doLogin")) {
+        if (action.equals(NavigationConstants.ACTION_DO_LOGIN)) {
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             try {
-                User user = userService.loginUser(email, password);
+                User user = userService.loginUser(email, CryptoUtil.inputToHash(password));
 
                 request.getSession().setAttribute("user", user);
                 response.sendRedirect("/");
 
             } catch (UserCredentialsException e) {
                 request.setAttribute("message", e.getMessage());
-                address = "/WEB-INF/view/login.jsp";
+                address = NavigationConstants.PAGE_LOGIN;
+            } catch (SQLException e) {
+                e.printStackTrace();
+                request.setAttribute("message", MessageConstants.ERROR_INTERNAL);
+                address = NavigationConstants.PAGE_LOGIN;
             }
 
-        } else if (action.equals("logout")) {
+        } else if (action.equals(NavigationConstants.ACTION_LOGOUT)) {
             HttpSession session = request.getSession();
             session.removeAttribute("user");
             session.invalidate();
             response.sendRedirect("/");
-        } else if (action.equals("doRegister")) {
+        } else if (action.equals(NavigationConstants.ACTION_DO_REGISTER)) {
 
 
             String firstName = request.getParameter("firstName");
@@ -78,7 +85,7 @@ public class UserServlet extends HttpServlet {
             //TODO validate
             if (!password.equals(request.getParameter("pass2"))) {
                 request.setAttribute("message", MessageConstants.ERROR_PASSWORD_IS_NOT_MATCH);
-                request.getRequestDispatcher("/WEB-INF/view/new-account.jsp").forward(request, response);
+                request.getRequestDispatcher(NavigationConstants.PAGE_NEW_ACCOUNT).forward(request, response);
                 return;
             }
 
@@ -101,23 +108,22 @@ public class UserServlet extends HttpServlet {
             user.setLastName(lastName);
             user.setImagePath(pathToSaveDb.toString());
             user.setEmail(email);
-            user.setPassword(password);
+            user.setPassword(CryptoUtil.inputToHash(password));
             user.setStatus(UserConstants.USER_STATUS_INACTIVE);
             user.setToken(UUID.randomUUID().toString());
             Role role = new Role();
             role.setId(UserConstants.ROLE_ID_USER);
             user.setRole(role);
             try {
-                if (userService.registerUser(user)) {
-                    request.getSession().setAttribute("message", MessageConstants.SUCCESS_REGISTER);
-                    response.sendRedirect("/");
-                } else {
-                    request.setAttribute("message", MessageConstants.ERROR_INTERNAL);
-                    request.getRequestDispatcher("/WEB-INF/view/new-account.jsp").forward(request, response);
-                }
+                userService.registerUser(user);
+                request.getSession().setAttribute("message", MessageConstants.SUCCESS_REGISTER);
+                response.sendRedirect("/");
             } catch (UserCredentialsException e) {
                 request.setAttribute("message", e.getMessage());
-                request.getRequestDispatcher("/WEB-INF/view/new-account.jsp").forward(request, response);
+                request.getRequestDispatcher(NavigationConstants.PAGE_NEW_ACCOUNT).forward(request, response);
+            } catch (SQLException e) {
+                request.setAttribute("message", MessageConstants.ERROR_INTERNAL);
+                request.getRequestDispatcher(NavigationConstants.PAGE_NEW_ACCOUNT).forward(request, response);
             }
 
         }

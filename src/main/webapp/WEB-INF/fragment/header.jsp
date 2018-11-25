@@ -36,7 +36,7 @@
                     <c:when test="${sessionScope.user ne null}">
                     <div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
                         <div class="stnt pull-left">
-                            <a class="btn btn-primary" href="${pageContext.request.contextPath}/ns?action=new-topic">New Topic</a>
+                            <a class="btn btn-primary" href="${pageContext.request.contextPath}/ns?action=newTopic">New Topic</a>
                         </div>
 
                         <div class="avatar pull-left dropdown">
@@ -46,7 +46,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li role="presentation"><a role="menuitem" tabindex="-3" href="/us?action=logout">Log Out</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-4"
-                                                           href="${pageContext.request.contextPath}/ns?action=new-account">Create
+                                                           href="${pageContext.request.contextPath}/ns?action=newAccount">Create
                                     account</a></li>
                             </ul>
                         </div>
@@ -61,7 +61,7 @@
                             </div>
 
                             <div class="avatar pull-left dropdown">
-                                <a class="btn btn-primary" href="${pageContext.request.contextPath}/ns?action=new-account">Register</a>
+                                <a class="btn btn-primary" href="${pageContext.request.contextPath}/ns?action=newAccount">Register</a>
                             </div>
 
                             <div class="clearfix"></div>

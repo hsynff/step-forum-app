@@ -2,6 +2,7 @@ package com.step.forum.servlet;
 
 import com.mysql.cj.xdevapi.JsonArray;
 import com.step.forum.constants.MessageConstants;
+import com.step.forum.constants.NavigationConstants;
 import com.step.forum.constants.TopicConstants;
 import com.step.forum.dao.TopicDaoImpl;
 import com.step.forum.job.PopularTopicsUpdater;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,12 +63,12 @@ public class TopicServlet extends HttpServlet {
         }
 
 
-        if (action.equals("getPopularTopics")) {
+        if (action.equals(NavigationConstants.ACTION_GET_POPULAR_TOPICS)) {
             List<Topic> listTopics = updater.getPopularTopics();
             JSONArray jsonArray = new JSONArray(listTopics);
             response.setContentType("application/json");
             response.getWriter().write(jsonArray.toString());
-        } else if (action.equals("addNewTopic")) {
+        } else if (action.equals(NavigationConstants.ACTION_ADD_NEW_TOPIC)) {
             String title = request.getParameter("title");
             String desc = request.getParameter("desc");
             User user = (User) request.getSession().getAttribute("user");
@@ -78,47 +80,75 @@ public class TopicServlet extends HttpServlet {
             topic.setViewCount(0);
             topic.setUser(user);
             topic.setStatus(TopicConstants.TOPIC_STATUS_INACTIVE);
-            topicService.addTopic(topic);
-            request.getSession().setAttribute("message", MessageConstants.SUCCESS_ADD_TOPIC);
+
+            try {
+                topicService.addTopic(topic);
+                request.getSession().setAttribute("message", MessageConstants.SUCCESS_ADD_TOPIC);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                request.getSession().setAttribute("message", MessageConstants.ERROR_INTERNAL);
+            }
+
+
             response.sendRedirect("/");
 
 
-        }else if(action.equals("getSimilarTopics")){
-            String title=request.getParameter("title");
+        } else if (action.equals(NavigationConstants.ACTION_GET_SIMILAR_TOPICS)) {
+            String title = request.getParameter("title");
             String[] keywords = title.trim().split(" ");
-            keywords = Arrays.stream(keywords).filter(s -> s.length()>= 3).toArray(s -> new String[s]);
+            keywords = Arrays.stream(keywords).filter(s -> s.length() >= 3).toArray(s -> new String[s]);
             System.out.println(Arrays.toString(keywords));
-            List<Topic> topicList = keywords.length == 0 ? new ArrayList<>() : topicService.getSimilarTopics(keywords);
+            List<Topic> topicList = new ArrayList<>();
+            try {
+                topicList = keywords.length == 0 ? new ArrayList<>() : topicService.getSimilarTopics(keywords);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             request.setAttribute("topicList", topicList);
-            address = "/WEB-INF/fragment/similar-topics-fragments.jsp";
+            address = NavigationConstants.PAGE_SIMILAR_TOPICS_FRAGMENTS;
 
 
-        }else if (action.equals("getCommentsByTopicId")){
-            int id=Integer.parseInt(request.getParameter("id"));
-            List<Comment> listComments=topicService.getCommentsByTopicId(id);
-            request.setAttribute("listComments",listComments);
-            address="/WEB-INF/fragment/comments.jsp";
+        } else if (action.equals(NavigationConstants.ACTION_GET_COMMENTS_BY_TOPIC_ID)) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            List<Comment> listComments = new ArrayList<>();
 
-        }else if (action.equals("addComment")){
-            String idTopic=request.getParameter("idTopic");
-            String desc=request.getParameter("desc");
-            Topic topic=new Topic();
+            try {
+                listComments = topicService.getCommentsByTopicId(id);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            request.setAttribute("listComments", listComments);
+            address = NavigationConstants.PAGE_COMMENTS;
+
+        } else if (action.equals(NavigationConstants.ACTION_ADD_COMMENT)) {
+            String idTopic = request.getParameter("idTopic");
+            String desc = request.getParameter("desc");
+            Topic topic = new Topic();
             topic.setId(Integer.parseInt(idTopic));
-            User user=(User)request.getSession().getAttribute("user");
-            Comment comment=new Comment();
+            User user = (User) request.getSession().getAttribute("user");
+            Comment comment = new Comment();
             comment.setDesc(desc);
             comment.setTopic(topic);
             comment.setUser(user);
             comment.setWriteDate(LocalDateTime.now());
-            if (!topicService.addComment(comment)) {
+            try {
+                topicService.addComment(comment);
+            } catch (SQLException e) {
+                e.printStackTrace();
                 throw new ServletException();
             }
 
 
-        }else if(action.equals("getTopicByUserId")){
+        } else if (action.equals(NavigationConstants.ACTION_GET_TOPIC_BY_USER_ID)) {
             User user = (User) request.getSession().getAttribute("user");
-            List<Topic> topicList=topicService.getTopicByUserId(user.getId());
-            JSONArray jsonArray=new JSONArray(topicList);
+            List<Topic> topicList = new ArrayList<>();
+            try {
+                topicList = topicService.getTopicByUserId(user.getId());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JSONArray jsonArray = new JSONArray(topicList);
             response.setContentType("application/json");
             response.getWriter().write(jsonArray.toString());
 
